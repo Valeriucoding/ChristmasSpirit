@@ -64,7 +64,6 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    /* Path container styles */
     .path-container {
       position: relative;
       padding: 4rem 0;
@@ -80,6 +79,12 @@
       transform: translateX(-50%);
     }
 
+    @media (max-width: 768px) {
+      .path {
+        opacity: 0.3;
+      }
+    }
+
     .journey-item {
       opacity: 0;
       transform: translateY(30px);
@@ -92,7 +97,6 @@
       transform: translateY(0);
     }
 
-    /* Snowfall Styles */
     .snowfall-container {
       position: fixed;
       top: 0;
@@ -101,14 +105,6 @@
       height: 100%;
       pointer-events: none;
       z-index: 1000;
-    }
-
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      color: white;
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-      animation: snowfall linear infinite;
     }
 
     @keyframes snowfall {
@@ -141,34 +137,7 @@
         transform: translateY(-10px) translateX(-50%);
       }
     }
-    .music-btn {
-      position: fixed;
-      bottom: 2rem;
-      left: 2rem;
-      z-index: 9999;
-      background: #386641;
-      color: white;
-      padding: 1rem;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
 
-    .music-btn:hover {
-      transform: scale(1.1);
-      background: #bc4749;
-    }
-
-    .music-btn.playing {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
 
   </style>
 </head>
@@ -199,13 +168,6 @@
   <div class="scroll-indicator">↓</div>
 </div>
 
-<!--<button class="music-btn" id="musicBtn" title="Play Christmas Music">-->
-<!--  🎵-->
-<!--</button>-->
-
-<!--<audio id="christmasMusic" loop>-->
-<!--  <source src="https://www.youtube.com/watch?v=RCS9N1DxA8k" type="audio/mp3">-->
-<!--</audio>-->
 
 <div class="flag-section">
   <div class="flex flex-col md:flex-row w-full">
@@ -291,20 +253,6 @@
 
     setInterval(createSnowflake, 100);
   });
-  // const musicBtn = document.getElementById('musicBtn');
-  // const audio = document.getElementById('christmasMusic');
-  // let isPlaying = false;
-  //
-  // musicBtn.addEventListener('click', () => {
-  //   if (isPlaying) {
-  //     audio.pause();
-  //     musicBtn.classList.remove('playing');
-  //   } else {
-  //     audio.play();
-  //     musicBtn.classList.add('playing');
-  //   }
-  //   isPlaying = !isPlaying;
-  // });
 </script>
 </body>
 </html>
